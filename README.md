@@ -5,7 +5,7 @@ This Application Help Solve the havoc Faced in Creating the TIme and scheduling 
 
 #REQUIREMENT
   - Spreadsheet File (xls|xlsx|xlsm|xlsb)
-      #Spreedsheet 1:Courses*
+      - Spreedsheet 1:Courses*
           3 Columns***
             - Course Code
                 Description: This is a short Code usually provided by the institution to identify/tag a particular subject
@@ -21,7 +21,7 @@ This Application Help Solve the havoc Faced in Creating the TIme and scheduling 
                 Data Type***: Int16
                 Text Length: (recommended 1 char example[2])
                 
-      #Spreedsheet 2:Halls*
+      - Spreedsheet 2:Halls*
           4 Columns***
             - Hall Number
                 Data Type***: Int16
@@ -46,13 +46,13 @@ This Application Help Solve the havoc Faced in Creating the TIme and scheduling 
                 Text Length: (Boolean Values Text Length)
                 
                 
-      #- System Info
+      - System Info
           -Target Framework: .Net Framework 4.7.2
           -Output Type: Windows Application
           -Platform Target: Any CPU(Prefer 32) [Unsafe Code Disallowed]
           - Execution Level: Administrator
           
-     #Third Party Libraries
+     #*Third Party Libraries
         -Pdfsharp
            This Converts the Wpf Application into a Pdf Format
            
