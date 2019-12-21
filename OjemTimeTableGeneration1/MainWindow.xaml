@@ -1,0 +1,161 @@
+﻿<Window x:Class="OjemTimeTableGeneration1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OjemTimeTableGeneration1"
+        mc:Ignorable="d"
+        Title="King Ojem TimeTable App" Height="450" Width="800">
+    <Grid  Margin="15,12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="139*"/>
+            <ColumnDefinition Width="115*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Content="Generate Courses" 
+                   FontSize="23" Foreground="Black" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Black"
+            />
+
+
+
+            <StackPanel Height="156">
+                <Label Content="Select Excel File" 
+                   FontSize="15" Foreground="Black" 
+                   HorizontalAlignment="Left" 
+                   FontWeight="Light" 
+                   Margin="6,0,0,0" Width="107" FontStyle="Oblique"
+                />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox x:Name="txtBox_FileName"
+                         Margin="7,7,0,0"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top"
+                         Width="120" Height="24"
+                         Grid.Column="0" 
+                         RenderTransformOrigin="0.66,0.625" Grid.ColumnSpan="2"
+                             IsEnabled="False"
+                    />
+                    <Button x:Name="btn_BrowseFile"
+                        Content="Browse"
+                        Height="32"
+                        HorizontalAlignment="Left"
+                        Margin="65,0,0,6" Width="84"
+                        Click="Btn_BrowseFile_Click"
+                            Grid.Column="1" 
+                    />
+                </Grid>
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="File Category" 
+                       FontSize="15" Foreground="Black" 
+                       HorizontalAlignment="Left" 
+                       FontWeight="Bold" 
+                       Margin="6,0,0,0" Width="106" 
+                           FontStyle="Oblique" Grid.ColumnSpan="2" 
+                           
+                           
+                    />
+                    <!--<Button x:Name="btn_CancelBrowseFile"
+                        Content="Cancel"
+                        Height="32"
+                        HorizontalAlignment="Left"
+                        Margin="8,0,0,6" Width="96"
+                        Click="Btn_BrowseFile_Click"
+                            Grid.Column="0" Grid.ColumnSpan="2"
+                            IsEnabled="False"
+                    />-->
+
+                    <ComboBox x:Name="cmb_FileCategory" 
+                              Grid.Column="1"
+                              HorizontalAlignment="Left" 
+                              Margin="38,4,0,0" 
+                              VerticalAlignment="Top" 
+                              Width="116"
+                              Height="28"  
+                              ToolTip="Select File Category" 
+                    >
+                        <ComboBoxItem Content="Halls" 
+                                      HorizontalAlignment="Left" 
+                                      HorizontalContentAlignment="Center"
+                                      Width="116" Height="25"/>
+                        <ComboBoxItem Content="Courses" 
+                                      HorizontalContentAlignment="Center" 
+                                      HorizontalAlignment="Left" 
+                                      Width="116" Height="25"/>
+                    </ComboBox>
+                </Grid>
+                <Button x:Name="btn_AddBrojwseFile"
+                        Content="Add File"
+                        Height="32"
+                        HorizontalAlignment="Left"
+                        Margin="12,8,0,6" Width="227"
+                        Click="Btn_AddBrowseFile_Click"
+                />
+               
+
+            </StackPanel>
+            
+
+
+
+        </StackPanel>
+
+        <!--#region This is the Course List -->
+
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="245,0,2,0" >
+                <Label x:Name="lbl_availableCourses" Content="Available Course (0)" FontSize="22" Foreground="Black" HorizontalAlignment="Center" FontWeight="Black"/>
+                <ListView Height="305" 
+                        Margin="12,5" 
+                        x:Name="list_availableCourses"
+                        Padding="5"
+                        BorderThickness="0" 
+                        Cursor="Hand"
+                        ToolTip="Double Click To Remove" 
+                          IsEnabled="True"
+                />
+
+
+
+            </StackPanel>
+
+        <!--#endregion-->
+
+        <!--#region This is the Halls List -->
+        
+            <StackPanel Grid.Row="0" Grid.Column="2">
+                <Label Content="Available Halls" FontSize="23" Foreground="Black" HorizontalAlignment="Center"  FontWeight="Black"/>
+
+                <ListView Height="285" IsEnabled="False" 
+                          Margin="0,5" x:Name="list_availableHall" 
+                          Padding="5" BorderThickness="0" 
+                         />
+                <Button x:Name="btn_GenerateTimeTable"
+                        Content=" Generate Timetable " 
+                        Cursor="Hand"
+                        Click="Btn_GenerateTimeTable_Click" Margin="66,0,45,0" 
+                        Height="31" RenderTransformOrigin="0.51,1.452"
+                />
+
+            </StackPanel>
+        
+        <!--#endregion-->
+        
+        
+    </Grid>
+</Window>
